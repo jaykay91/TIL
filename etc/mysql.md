@@ -35,29 +35,31 @@ CREATE TABLE {table_name} (
 ### 테이블 삭제
 
 ```sql
-DROP TABLE {table_name}
+DROP TABLE {table_name};
 ```
 
 ### SELECT
 
 ```sql
-
+SELECT * FROM {table_name};
+SELECT {column1}, {column2}, ... FROM {table_name};
+SELECT * FROM {table_name} WHERE {column1} = {some_value};
 ```
 
 ### INSERT
 
 ```sql
-
+INSERT INTO {table_name} ({column1}, {column2}) VALUES ({some_value1}, {some_value2});
 ```
 
 ### UPDATE
 
 ```sql
-
+UPDATE {table_nmae} SET {column1} = {some_value1} WHERE {column2} = {some_value2}
 ```
 
 ### DELETE
 
 ```sql
-
+DELETE FROM {table_name} WHERE {column} = {some_value}
 ```
