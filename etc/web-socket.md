@@ -79,23 +79,28 @@ module.exports = server => {
       console.error(err);
     });
 
-    socket.on("pong", data => {
-      console.log(data);
+    socket.on("bye", data => {
+      console.log(data); // Bye, Server!
     });
 
     socket.intervalId = setInterval(() => {
-      socket.emit("ping", "PING!");
+      socket.emit("hello", "Hello, Client!");
     }, 3000);
   });
 };
+```
 
-// Client
-const socket = io.connect("http://localhost:3000", {
-  path: "/socket.io"
-});
+```html
+<!-- Client -->
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io.connect("/", {
+    path: "/socket.io"
+  });
 
-socket.on("ping", data => {
-  console.log(data);
-  socket.emit("pong", "PONG!");
-});
+  socket.on("hello", data => {
+    console.log(data); // Hello, Client!
+    socket.emit("bye", "Bye, Server!");
+  });
+</script>
 ```
