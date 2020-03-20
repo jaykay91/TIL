@@ -2,6 +2,11 @@
 
 webpack은 자바스크립트 모듈 번들러이다.
 
+## webpack-dev-server 실행 옵션
+
+--content-base: html파일의 경로를 지정해 줄 수 있다.  
+--open: 브라우저를 실행한다.
+
 ## Vue 설정
 
 ```js
